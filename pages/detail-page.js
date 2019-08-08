@@ -54,8 +54,11 @@ function submitComment()
    
     inputField.value = null;
     textArea.value = null;
-   
 }
+
+
+
+
 
   
  
