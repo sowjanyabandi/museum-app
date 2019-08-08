@@ -41,7 +41,7 @@ function submitComment()
    const h3 = document.createElement('h3'); 
    const p = document.createElement('p');
 
-   name= name.charAt(0).toUpperCase() + name.slice(1)
+   name= name.charAt(0).toUpperCase() + name.toLowerCase().slice(1)
    h3.innerHTML = `${name} said:`
 
 
