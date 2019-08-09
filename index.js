@@ -338,9 +338,10 @@ const data = {
 const title = paintings.title
 const src = paintings.webImage.url
 //const class = 'artObject' 
-console.log(title)
-console.log(src)
-  
+//console.log(title)
+//console.log(src)
+
+ //console.log(year)
 const gallery = document.getElementById('gallery')
 //console.log(gallery)
   
@@ -358,13 +359,26 @@ a.appendChild(img)
 gallery.appendChild(a)
 //console.log(gallery.appendChild(a))
  }
+ function passesAllCriteria(painting){
+  const titleLong = painting.longTitle
+  const year = titleLong.substring(titleLong.length - 4, titleLong.length)
+  return (
+    painting.webImage.width > 1500 &&
+    painting.principalOrFirstMaker !== 'Gerard van Honthorst' &&
+    year < 1800)
+  
+  }
+
  function displayAllPaintings(paintings){
 
 for(i=0;i<paintings.length;i++){
-   displayPainting(paintings[i]) 
-
- }
+  const currentPainting = paintings[i]
+  if(passesAllCriteria(currentPainting)) {
+  
+   displayPainting(currentPainting)
+   }
+  }
  }
  
- displayAllPaintings(paintings)
+displayAllPaintings(paintings)
 
